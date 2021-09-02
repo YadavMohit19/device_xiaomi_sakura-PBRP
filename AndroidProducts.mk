@@ -17,4 +17,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/omni_sakura_india.mk
+     $(LOCAL_DIR)/omni_sakura.mk
