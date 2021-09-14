@@ -26,8 +26,8 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := sakura_india
-PRODUCT_NAME := omni_sakura_india
+PRODUCT_DEVICE := sakura
+PRODUCT_NAME := omni_sakura
 PRODUCT_BRAND := xiaomi
 PRODUCT_MODEL := Redmi 6 Pro
 PRODUCT_MANUFACTURER := xiaomi

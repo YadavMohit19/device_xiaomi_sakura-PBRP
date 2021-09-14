@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/sakura_india
+DEVICE_PATH := device/xiaomi/sakura
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -37,7 +37,7 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := sakura_india
+TARGET_OTA_ASSERT_DEVICE := sakura
 
 # Crypto
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
@@ -71,8 +71,8 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sakura_india
-TARGET_KERNEL_CONFIG := sakura_india_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sakura
+TARGET_KERNEL_CONFIG := sakura_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8953

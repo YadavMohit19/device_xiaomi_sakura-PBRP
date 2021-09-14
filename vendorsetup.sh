@@ -16,5 +16,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo omni_sakura_india-userdebug
-add_lunch_combo omni_sakura_india-eng
+add_lunch_combo omni_sakura-userdebug
+add_lunch_combo omni_sakura-eng

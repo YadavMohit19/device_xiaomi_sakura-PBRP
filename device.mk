@@ -16,5 +16,4 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/xiaomi/sakura_india
-
+LOCAL_PATH := device/xiaomi/sakura
