@@ -29,15 +29,19 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := sakura
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := MSM8953
+TARGET_NO_BOOTLOADER := true
 
 # Crypto
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
@@ -48,8 +52,9 @@ PLATFORM_VERSION := 16.1.0
 PLATFORM_SECURITY_PATCH := 2099-12-31
 
 # File systems
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 BOARD_HAS_LARGE_FILESYSTEM := true
-#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 29797710 # This is the maximum known partition size, but it can be higher, so we just omit it
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -60,7 +65,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.selinux=permissive
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -71,8 +76,6 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sakura
-TARGET_KERNEL_CONFIG := sakura_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
